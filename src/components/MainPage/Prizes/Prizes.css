@@ -1,6 +1,6 @@
-/* General styles */
+
 .prizes__container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -12,83 +12,74 @@
 .prizes_text_container {
     font-family: 'Virgil';
     font-size: 60px;
-    margin-bottom: 20px;
+    padding-bottom: 50px;
 }
 
-.prize_box_container {
-    width: 65%;
+.prize_box {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .prizes {
-    width: 100%;
-    max-width: 300px; /* Set a maximum width for responsiveness */
-    height: 280px;
+    width: 25%;
     border: 3px solid #74d680;
     margin-bottom: 10px;
     position: relative;
     border-radius: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0px;
     display: flex;
     flex-direction: column; 
+    order: 2;
+}
+.prize_1{
+    transform: translateY(-50%) !important;
 }
 
-.prize_1 {
-    /* order: -1; Move the prize_1 box to the top */
-    justify-content: center;
-}
 
-.prizes:hover {
+/*.prizes:hover {
     transform: scale(1.05);
 }
+*/
 
-/* Image styles */
-.prize_img {
+/* .prize_img {
     position: relative;
+} */
+
+.prizes img {
+    width: 70%;
+    aspect-ratio: initial;
+    padding-bottom: 20px;
 }
 
-.prize_img img {
-    width: 50%;
-    height: auto;
-    border-radius: 8px;
-    margin-left: 25%;
-    margin-top: 6%;
-}
 
-/* Prize amount styles */
 .prize-amount {
     font-weight: bold;
     color: #74d680;
     font-family: 'Virgil';
     font-size: 40px;
-    position: absolute;
-    bottom: 15px;
-    left: 25%;
 }
 
-/* Responsive styles */
-@media (max-width: 767px) {
-    .prize_box_container {
+
+@media (max-width: 600px) {
+    .prize_box {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
-
-    .prizes {
-        max-width: none;
+    .prize_1{
+       transform: none !important; 
+       order: 1;
+    } 
+    .prizes_text_container {
+        padding-bottom: 20px;
     }
-
-    /* .prize_1 {
-        order: -2; Move the prize_1 box to the second position in mobile view
-    } */
-
-    .prize_img img {
-        margin-left: 25%;
-        margin-top: 8%;
-    }
-
-    .prize-amount {
-        left: 50%;
-        transform: translateX(-50%);
+    .prizes{
+        width: 80%;
+        
     }
 }
